@@ -10,26 +10,29 @@ routermusologin.get('/muso-login', (req, res) => {
 
 routermusologin.post('/muso-login', (req, res) => {
     Musos.findOne({
-        username: req.body.username 
+        where: {
+            username: req.body.username
+        }
     })
     .then(muso => {
         if(muso) {
-            const userPassword = bcrypt.compareSync(req.body.password, muso.password)
-            console.log(userPassword);
+            let userPassword = bcrypt.compareSync(req.body.password, muso.password)
+
             if (userPassword) {
                 req.session.musoId = muso.id;
                 req.session.username = muso.username;
                 req.session.name = muso.name;
-                res.redirect('/muso-dashboard');
+
+                res.redirect('/muso/muso-dashboard');
             } else {
-                res.render('./muso/muso-login');
+                res.render('./muso/muso-login', {title: 'Login for Muso', errors: [{ message: 'Username/password is incorrect!' }]});
             }
         } else {
-            res.render('./muso/muso-login');
+            res.render('./muso/muso-login', {title: 'Login for Muso', errors: [{ message: 'Username/password is incorrect!' }]});
         }
     })
     .catch(({ errors }) => {
-        res.render('./muso/muso-login', {})
+        res.render('./muso/muso-login', {title: 'Login for Muso', errors })
     })
 })
 

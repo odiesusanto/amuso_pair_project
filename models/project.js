@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
     Project.hasMany(models.Fan);
     Project.hasMany(models.Contribution);
     Project.belongsToMany(models.Fan, {through: models.Contribution})
-    Project.hasMany(models.Muso);
   };
   return Project;
 };

@@ -8,13 +8,15 @@ module.exports = (sequelize, DataTypes) => {
     established_year: DataTypes.INTEGER,
     username: {
       type: DataTypes.STRING,
-    len: [8, 12]},
-    password: {type: DataTypes.STRING,
-    len:[8, 12]}
+      len: [8, 12]
+    },
+    password: {
+      type: DataTypes.STRING,
+      len: [8, 12]
+    }
   }, {});
-  Muso.associate = function(models) {
-    // associations can be defined here
-    Muso.belongsTo(models.Project)
+  Muso.associate = function (models) {
+    // associations can be defined heres
   };
 
   Muso.hook('beforeCreate', (user, options) => {
@@ -23,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     const hash = bcrypt.hashSync(user.password, salt);
 
     user.password = hash;
-  })
+  });
+
   return Muso;
 };

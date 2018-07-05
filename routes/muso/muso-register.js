@@ -16,7 +16,7 @@ routermusoregister.post('/muso-register', function(req,res){
         password: req.body.password
     })
     .then(() => {
-        res.redirect('/muso/muso-dashboard')
+        res.redirect('/muso/muso-login')
     })
     .catch((err) => {
         // console.log(err)

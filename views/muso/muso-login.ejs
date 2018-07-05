@@ -9,18 +9,17 @@
 
       <h1><%= title %></h1>
 
-      <% if (error !== 'undefined') { %>
-        <%= errors.forEach(error) => { %>
-          <p>error.message</p>
-       <% } %>
-    <% } %>
+      <% if (typeof errors !== 'undefined') { %>
+        <% errors.forEach(error => { %>
+          <p><%= error.message %></p>
+       <% }) %>
+      <% } %>
     
-      <form action="/muso/muso-login" method="post">
+      <form action="/muso/muso-login" method="POST">
           <div class="col">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Login">
-            <input type="submit" value="Forgot Password">
+            <input type="text" name="username" placeholder="Username" value="">
+            <input type="password" name="password" placeholder="Password" value="">
+            <button type="submit">Login</button>
           </div>
       </form>
     </div>
