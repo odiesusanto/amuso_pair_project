@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fan Profile</title>
+    <style>
+      table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+
+      tr:nth-child(even) {
+          background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div class="container">
+      <div class="container">
+        <form action="/fan/fan-profile" method="POST">
+          Name: <br>
+          <input type="text" name="name" value="<%= %>"><br><br>
+          Email: <br>
+          <input type="text" name="email" value="<%= %>"><br><br>
+          Genre: <br>
+          <input type="checkbox" name="genre" value="Rock">Rock<br> 
+          <input type="checkbox" name="genre" value="Pop">Pop<br> 
+          <input type="checkbox" name="genre" value="Jazz">Jazz<br>
+          <input type="checkbox" name="genre" value="Dance">Dance<br>
+          <input type="checkbox" name="genre" value="Punk">Punk<br>
+          <input type="checkbox" name="genre" value="R&B">R&B/Hiphop<br>
+          <input type="checkbox" name="genre" value="Rap">Rap<br>
+          <input type="checkbox" name="genre" value="Country">Country<br>
+        </div>
+        <br>
+        <button type="button" name="Save">Save</button>
+      </form>
+    </div>
+    <div class="container">
+      <h2>Contribution History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Muso</th>
+            <th>Project Name</th>
+            <th>Contribution</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Muso Registration Page</title>
+</head>
+
+<body>
+    <h1>Muso Registration</h1>
+    <div class="container">
+        <div class="container">
+            <form action="/muso/muso-register" method="POST">
+                Name:<br>
+                <input type="text" name="name" placeholder="Name"><br><br>
+                Genre: (pick one) <br>
+                <input type="checkbox" name="genre" value="Rock">Rock<br>
+                <input type="checkbox" name="genre" value="Pop">Pop<br>
+                <input type="checkbox" name="genre" value="Jazz">Jazz<br>
+                <input type="checkbox" name="genre" value="Dance">Dance<br>
+                <input type="checkbox" name="genre" value="Punk">Punk<br>
+                <input type="checkbox" name="genre" value="R&B">R&B/Hiphop<br>
+                <input type="checkbox" name="genre" value="Rap">Rap<br>
+                <input type="checkbox" name="genre" value="Country">Country<br>
+                <br>
+                Established Year:<br>
+                <input type="text" name="established_year" placeholder="YYYY"><br><br>   
+                Username:<br>
+                <input type="text" name="username" placeholder="username"><br><br>
+                Password:<br>
+                <input type="text" name="password" placeholder="password"><br><br>
+                Email:
+                <br>
+                <input type="text" name="email" placeholder="email"><br><br>
+        </div>
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
