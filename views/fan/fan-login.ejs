@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Fan</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <h1><%= title %></h1>
+
+      <% if (typeof errors !== 'undefined') { %>
+        <% errors.forEach(error => { %>
+          <p><%= error.message %></p>
+       <% }) %>
+      <% } %>
+    
+      <form action="/fan/fan-login" method="POST">
+          <div class="col">
+            <input type="text" name="email" placeholder="Email" value="">
+            <input type="password" name="password" placeholder="Password" value="">
+            <button type="submit">Login</button>
+          </div>
+      </form>
+    </div>
+  </body>
+</html>
